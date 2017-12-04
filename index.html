@@ -6,21 +6,6 @@
         <title>Newton Disc</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <style>
-        @-webkit-keyframes rotation {
-          from {
-            -webkit-transform: rotate(0deg);
-          }
-          to {
-            -webkit-transform: rotate(359deg);
-          }
-        }
-        .rotate {
-          -webkit-animation: rotation .001s infinite linear;
-          overflow: hidden;
-        }
-        </style>
-
     </head>
     <body>
 
@@ -30,5 +15,14 @@
           <button type="button" name="button" value=1 onclick="javascript: document.getElementById('image').src = (this.value == 2 ? 'disc1.jpg' : 'disc2.webp'); this.value = (this.value == 1 ? 2 : 1) ">Toggle disc</button>
         </div>
         <img id="image" class="" src="disc1.jpg" style="width:40vw; margin-top:5vw"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" charset="utf-8"></script>
+        <script src="jQueryRotate.js" charset="utf-8"></script>
+        <script type="text/javascript">
+          var angle = 0;
+          setInterval(function(){
+            angle+=28;
+            $("#image.rotate").rotate(angle);
+          },1);
+        </script>
     </body>
 </html>
